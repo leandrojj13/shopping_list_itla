@@ -1,27 +1,29 @@
-/*
- * Menu.h
- *
- *  Created on: May 22, 2016
- *      Author: raydelto
- */
+#ifndef INIT_H_INCLUDED
+#define INIT_H_INCLUDED
 
-#ifndef MENU_H_
-#define MENU_H_
+#include <iostream>
+#include<stdlib.h>
 #include "List.h"
+#define clean system("cls");
 
-class Menu
-{
-	private:
-		void clearScreen();
-		void listItems();
-		void addItems();
-		void removeItems();
-		bool validate(int option);
-		void routeAction(int option);
-		void pause();
-	public:
-		Menu();
-		void show();
-};
+using namespace std;
 
-#endif /* MENU_H_ */
+namespace Gestor_Compras{
+    class Init
+    {
+        private:
+            string error = "";
+            void mainMenu();
+            void iteratorOfItemsList();
+            void addingItem();
+            void removeItemOfList();
+        public:
+            void execute();
+            ItemsList* itemsList = new ItemsList();
+
+
+    };
+}
+
+
+#endif // INIT_H_INCLUDED

@@ -1,23 +1,27 @@
-/*
- * Element.h
- *
- *  Created on: May 22, 2016
- *      Author: raydelto
- */
+#ifndef ITEMS_H
+#define ITEMS_H
+#include<stdlib.h>
+#include<string>
 
-#ifndef ELEMENT_H_
-#define ELEMENT_H_
-#include <string>
-class Element
-{
-	public:
-		Element(std::string name);
 
-	private:
-		Element* _next;
-		std::string _name;
-		//This means that List can access to all private members of this class
-		friend class List;
-};
+namespace Gestor_Compras{
+    class Items
+    {
 
-#endif /* ELEMENT_H_ */
+        private:
+            void addItem();
+            Items* _next;
+            std::string _name;
+            int _amount;
+        public:
+            Items(std::string name, int amount);
+            std::string getName(){return _name;}
+            int getAmount(){return _amount;}
+
+            void setNext(Items* item){_next = item;}
+            Items* getNext(){return _next;};
+            int amount = 0;
+
+    };
+}
+#endif // ITEMS_H

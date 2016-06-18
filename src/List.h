@@ -1,22 +1,23 @@
-/*
- * List.h
- *
- *  Created on: May 22, 2016
- *      Author: raydelto
- */
-
-#ifndef LIST_H_
-#define LIST_H_
+#ifndef ITEMSLIST_H_INCLUDED
+#define ITEMSLIST_H_INCLUDED
+#include <cstdlib>
+#include <string>
 #include "Element.h"
-class List
-{
-	public:
-		List();
-		void add(Element* element);
-		void remove(int index);
-	private:
-		Element* _first;
-		Element* _last;
-};
+namespace Gestor_Compras{
+    class ItemsList
+    {
 
-#endif /* LIST_H_ */
+        private:
+            Items* _first;
+            Items* _last;
+
+        public:
+            void add(Items* item);
+            Items* getFirst()  {	return _first;	}
+            void removeItem(int index);
+            ItemsList();
+
+    };
+}
+
+#endif // ITEMSLIST_H_INCLUDED

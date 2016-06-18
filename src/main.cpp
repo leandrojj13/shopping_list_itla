@@ -1,10 +1,11 @@
-#include <iostream>
-using namespace std;
 #include "Menu.h"
+using namespace Gestor_Compras;
+
+Init* init = new Init();
 
 int main()
 {
-	Menu menu;
-	menu.show();
-	return EXIT_SUCCESS;
+
+    init->execute();
+    return 0;
 }
